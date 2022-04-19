@@ -42,4 +42,3 @@ class Solution:
                 return [index, _dict[sup_num]]
             else:
                 _dict[num] = index
-

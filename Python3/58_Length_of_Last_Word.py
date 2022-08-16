@@ -1,4 +1,4 @@
-class Solution:
+class Solution1:
     def lengthOfLastWord(self, s: str) -> int:
         """
         First solution.
@@ -15,7 +15,7 @@ class Solution:
                 return len(words[i])
 
 
-class Solution:
+class Solution2:
     def lengthOfLastWord(self, s: str) -> int:
         """
         Second solution.

@@ -38,6 +38,9 @@ class Solution:
         stack = []
         close_to_open_map = {')': '(', '}': '{', ']': '['}
 
+        if not s or len(s) % 2 == 1 or s[0] in close_to_open_map:
+            return False
+
         for x in s:
             if x in close_to_open_map:
                 if stack and stack[-1] == close_to_open_map[x]:

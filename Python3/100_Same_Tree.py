@@ -11,9 +11,9 @@ class TreeNode:
 
 class Solution:
     """
-    This is my brute-force solution.
-    Time complexity: O(n)
-    Space complexity: O(n)
+    This is my brute-force solution. It uses the iteration technique.
+    Time complexity: O(len(p) + len(q))
+    Space complexity: O(len(p) + len(q))
     """
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
         if not p and not q:
@@ -49,8 +49,21 @@ class Solution:
         return True
 
 
+class Solution:
+    """
+    This is the more efficient solution. It uses the recursive technique.
+    Time complexity: O(len(p) + len(q))
+    Space complexity: O(len(p) + len(q))
+    """
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
 
+        if not p and not q:
+            return True
 
+        if not p or not q or p.val != q.val:
+            return False
 
+        left_flag = self.isSameTree(p=p.left, q=q.left)
+        right_flag = self.isSameTree(p=p.right, q=q.right)
 
-
+        return left_flag and right_flag

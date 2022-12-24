@@ -19,7 +19,7 @@ class Solution:
         if not p and not q:
             return True
 
-        if (not p and q) or (p and not q):
+        if not p or not q:
             return False
 
         stack_p = [p]
